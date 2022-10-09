@@ -46,7 +46,7 @@ namespace PDFtools
                             File.Copy(path, newfileName);
                             //ExcelFileExtension.SaveAsCSV(path, newPDF);
                             //Process.Start(newPDF);
-                            Process.Start("pdfcpu.exe", "annot remove " + newfileName);
+                            Process.Start("pdfcpu.exe", optionParameter + newfileName);
 
                         }
                     }
