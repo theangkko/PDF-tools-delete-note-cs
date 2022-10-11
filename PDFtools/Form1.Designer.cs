@@ -29,12 +29,14 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             this.radioBunpassword = new System.Windows.Forms.RadioButton();
             this.radioBRemoveAtto = new System.Windows.Forms.RadioButton();
             this.comboBoxSelectMode = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -101,10 +103,24 @@
             "PDFcpu"});
             this.comboBoxSelectMode.Location = new System.Drawing.Point(262, 6);
             this.comboBoxSelectMode.Name = "comboBoxSelectMode";
+            this.comboBoxSelectMode.SelectedIndex = 0;
             this.comboBoxSelectMode.Size = new System.Drawing.Size(127, 20);
             this.comboBoxSelectMode.TabIndex = 4;
-            this.comboBoxSelectMode.SelectedIndex = 0;
             this.comboBoxSelectMode.SelectedIndexChanged += new System.EventHandler(this.comboBoxSelectMode_SelectedIndexChanged);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label3.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.label3.Location = new System.Drawing.Point(213, 6);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(42, 16);
+            this.label3.TabIndex = 5;
+            this.label3.Text = "Using";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // Form1
             // 
@@ -112,12 +128,14 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(401, 216);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.comboBoxSelectMode);
             this.Controls.Add(this.radioBRemoveAtto);
             this.Controls.Add(this.radioBunpassword);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -136,6 +154,7 @@
         private System.Windows.Forms.RadioButton radioBunpassword;
         private System.Windows.Forms.RadioButton radioBRemoveAtto;
         private System.Windows.Forms.ComboBox comboBoxSelectMode;
+        private System.Windows.Forms.Label label3;
     }
 }
 
