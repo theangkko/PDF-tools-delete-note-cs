@@ -35,35 +35,35 @@
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             this.radioBunpassword = new System.Windows.Forms.RadioButton();
             this.radioBRemoveAtto = new System.Windows.Forms.RadioButton();
+            this.comboBoxSelectMode = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F);
-            this.label1.Location = new System.Drawing.Point(20, 64);
+            this.label1.Font = new System.Drawing.Font("Microsoft Tai Le", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(47, 95);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(411, 39);
+            this.label1.Size = new System.Drawing.Size(304, 48);
             this.label1.TabIndex = 0;
-            this.label1.Text = "DRAG AND DROP HERE";
+            this.label1.Text = "DROP FILE HERE";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label2.Location = new System.Drawing.Point(1, 154);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label2.Location = new System.Drawing.Point(325, 35);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(64, 15);
+            this.label2.Size = new System.Drawing.Size(77, 18);
             this.label2.TabIndex = 1;
             this.label2.Text = "theangkko";
             // 
             // notifyIcon1
             // 
-            this.notifyIcon1.Icon = ((System.Drawing.Icon)(resources.GetObject("notifyIcon1.Icon")));
             this.notifyIcon1.Text = "notifyIcon1";
             this.notifyIcon1.Visible = true;
             this.notifyIcon1.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.notifyIcon1_MouseDoubleClick);
@@ -94,12 +94,26 @@
             this.radioBRemoveAtto.UseVisualStyleBackColor = true;
             this.radioBRemoveAtto.CheckedChanged += new System.EventHandler(this.radioBRemoveAtto_CheckedChanged);
             // 
+            // comboBoxSelectMode
+            // 
+            this.comboBoxSelectMode.FormattingEnabled = true;
+            this.comboBoxSelectMode.Items.AddRange(new object[] {
+            "GhostScript",
+            "PDFcpu"});
+            this.comboBoxSelectMode.Location = new System.Drawing.Point(275, 12);
+            this.comboBoxSelectMode.Name = "comboBoxSelectMode";
+            this.comboBoxSelectMode.SelectedIndex = 0;
+            this.comboBoxSelectMode.Size = new System.Drawing.Size(127, 20);
+            this.comboBoxSelectMode.TabIndex = 4;
+            this.comboBoxSelectMode.SelectedIndexChanged += new System.EventHandler(this.comboBoxSelectMode_SelectedIndexChanged);
+            // 
             // Form1
             // 
             this.AllowDrop = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(470, 173);
+            this.ClientSize = new System.Drawing.Size(414, 201);
+            this.Controls.Add(this.comboBoxSelectMode);
             this.Controls.Add(this.radioBRemoveAtto);
             this.Controls.Add(this.radioBunpassword);
             this.Controls.Add(this.label2);
@@ -109,7 +123,7 @@
             this.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "PDF Tool";
+            this.Text = "PDFtools v2022:: Unlock/Remove Annot";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -123,6 +137,7 @@
         private System.Windows.Forms.NotifyIcon notifyIcon1;
         private System.Windows.Forms.RadioButton radioBunpassword;
         private System.Windows.Forms.RadioButton radioBRemoveAtto;
+        private System.Windows.Forms.ComboBox comboBoxSelectMode;
     }
 }
 
