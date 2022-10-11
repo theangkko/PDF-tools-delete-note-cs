@@ -35,6 +35,7 @@
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             this.radioBunpassword = new System.Windows.Forms.RadioButton();
             this.radioBRemoveAtto = new System.Windows.Forms.RadioButton();
+            this.comboBoxSelectMode = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // label1
@@ -94,12 +95,27 @@
             this.radioBRemoveAtto.UseVisualStyleBackColor = true;
             this.radioBRemoveAtto.CheckedChanged += new System.EventHandler(this.radioBRemoveAtto_CheckedChanged);
             // 
+            // comboBoxSelectMode
+            // 
+            this.comboBoxSelectMode.FormattingEnabled = true;
+            this.comboBoxSelectMode.Items.AddRange(new object[] {
+            "GhostScript",
+            "PDFcpu"});
+            this.comboBoxSelectMode.Location = new System.Drawing.Point(331, 6);
+            this.comboBoxSelectMode.Name = "comboBoxSelectMode";
+            this.comboBoxSelectMode.Size = new System.Drawing.Size(127, 20);
+            this.comboBoxSelectMode.TabIndex = 4;
+            this.comboBoxSelectMode.Text = "Select Method";
+            this.comboBoxSelectMode.SelectedIndexChanged += new System.EventHandler(this.comboBoxSelectMode_SelectedIndexChanged);
+            this.comboBoxSelectMode.SelectedIndex = 0;
+            // 
             // Form1
             // 
             this.AllowDrop = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(470, 173);
+            this.Controls.Add(this.comboBoxSelectMode);
             this.Controls.Add(this.radioBRemoveAtto);
             this.Controls.Add(this.radioBunpassword);
             this.Controls.Add(this.label2);
@@ -123,6 +139,7 @@
         private System.Windows.Forms.NotifyIcon notifyIcon1;
         private System.Windows.Forms.RadioButton radioBunpassword;
         private System.Windows.Forms.RadioButton radioBRemoveAtto;
+        private System.Windows.Forms.ComboBox comboBoxSelectMode;
     }
 }
 

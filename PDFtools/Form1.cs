@@ -1,14 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Diagnostics;
-using System.Drawing;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using GS4Net;
+
 
 namespace PDFtools
 {
@@ -42,12 +39,50 @@ namespace PDFtools
 
                             effects = DragDropEffects.Move;
                             var extIndex = path.LastIndexOf('.');
-                            var newfileName = path.Replace(path.Substring(extIndex, path.Length - extIndex), "_unpw.pdf");
-                            File.Copy(path, newfileName);
-                            //ExcelFileExtension.SaveAsCSV(path, newPDF);
-                            //Process.Start(newPDF);
-                            Process.Start("pdfcpu.exe", optionParameter + newfileName);
+                            string newfileName;
 
+
+                            // pdfcpu.exe module
+                            if (comboBoxSelectMode.SelectedIndex == 1)
+                            {
+                                if (radioBRemoveAtto.Checked == true)
+                                {
+                                    newfileName = path.Replace(path.Substring(extIndex, path.Length - extIndex), "_noAnnot.pdf");
+                                    File.Copy(path, newfileName);
+                                    Process.Start("pdfcpu.exe", "annot remove " + '\u0022' + newfileName + '\u0022');
+                                }
+                                else if (radioBunpassword.Checked == true)
+                                {
+                                    newfileName = path.Replace(path.Substring(extIndex, path.Length - extIndex), "_unpw.pdf");
+                                    File.Copy(path, newfileName);
+                                    Process.Start("pdfcpu.exe", optionParameter + '\u0022' + newfileName + '\u0022');
+                                }
+                            }
+
+                            // pdfcpu.exe module
+                            else if (comboBoxSelectMode.SelectedIndex == 0)
+                            {
+                                Dictionary<string, string> dArgs = new Dictionary<string, string>();
+                                //dArgs.Add("COLORSCREEN", "false");
+                                Dictionary<string, string> sArgs = new Dictionary<string, string>();
+                                //sArgs.Add("OutputFile", "output.pdf");
+
+                                // Use Generate32 or Generate64 depending on your architecture
+                                // GS4Net.GS4Net.Generate64(path, newfileName, dArgs, sArgs);
+
+                                //Process.Start("gswin64c", GS4Net.GS4Net.g_gsArgs);
+                                if (radioBRemoveAtto.Checked == true)
+                                {
+                                    newfileName = path.Replace(path.Substring(extIndex, path.Length - extIndex), "_noAnnot.pdf");
+                                    dArgs.Add("ShowAnnots", "false");
+                                    GS4Net.GS4Net.Generate(path, newfileName, dArgs, sArgs);
+                                }
+                                else if (radioBunpassword.Checked == true)
+                                {
+                                    newfileName = path.Replace(path.Substring(extIndex, path.Length - extIndex), "_unpw.pdf");
+                                    GS4Net.GS4Net.Generate(path, newfileName, dArgs, sArgs);
+                                }
+                            }
                         }
                     }
                 }
@@ -79,7 +114,7 @@ namespace PDFtools
             if (radioBRemoveAtto.Checked == true)
             {
                 optionParameter = "annot remove ";
-            }
+            }  
             else
             {
                 //optionParameter = "decrypt ";
@@ -97,6 +132,15 @@ namespace PDFtools
             {
                 //optionParameter = "decrypt ";
             }
+
+        }
+
+        private void comboBoxSelectMode_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //if(comboBoxSelectMode.SelectedIndex == 0)
+
+            //if(comboBoxSelectMode.SelectedIndex == 1)   
+           
 
         }
     }
