@@ -103,6 +103,7 @@
             this.comboBoxSelectMode.Name = "comboBoxSelectMode";
             this.comboBoxSelectMode.Size = new System.Drawing.Size(127, 20);
             this.comboBoxSelectMode.TabIndex = 4;
+            this.comboBoxSelectMode.SelectedIndex = 0;
             this.comboBoxSelectMode.SelectedIndexChanged += new System.EventHandler(this.comboBoxSelectMode_SelectedIndexChanged);
             // 
             // Form1
