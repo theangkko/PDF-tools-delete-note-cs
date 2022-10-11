@@ -100,19 +100,20 @@
             this.comboBoxSelectMode.Items.AddRange(new object[] {
             "GhostScript",
             "PDFcpu"});
-            this.comboBoxSelectMode.Location = new System.Drawing.Point(275, 12);
+            this.comboBoxSelectMode.Location = new System.Drawing.Point(331, 6);
             this.comboBoxSelectMode.Name = "comboBoxSelectMode";
-            this.comboBoxSelectMode.SelectedIndex = 0;
             this.comboBoxSelectMode.Size = new System.Drawing.Size(127, 20);
             this.comboBoxSelectMode.TabIndex = 4;
+            this.comboBoxSelectMode.Text = "Select Method";
             this.comboBoxSelectMode.SelectedIndexChanged += new System.EventHandler(this.comboBoxSelectMode_SelectedIndexChanged);
+            this.comboBoxSelectMode.SelectedIndex = 0;
             // 
             // Form1
             // 
             this.AllowDrop = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(414, 201);
+            this.ClientSize = new System.Drawing.Size(470, 173);
             this.Controls.Add(this.comboBoxSelectMode);
             this.Controls.Add(this.radioBRemoveAtto);
             this.Controls.Add(this.radioBunpassword);
