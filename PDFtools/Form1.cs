@@ -43,7 +43,7 @@ namespace PDFtools
 
 
                             // pdfcpu.exe module
-                            if (comboBoxSelectMode.SelectedIndex == 1)
+                            if (comboBoxSelectMode.SelectedIndex == 0)
                             {
                                 if (radioBRemoveAtto.Checked == true)
                                 {
@@ -59,8 +59,8 @@ namespace PDFtools
                                 }
                             }
 
-                            // pdfcpu.exe module
-                            else if (comboBoxSelectMode.SelectedIndex == 0)
+							// GhostScript module 
+							else if (comboBoxSelectMode.SelectedIndex == 1)
                             {
                                 Dictionary<string, string> dArgs = new Dictionary<string, string>();
                                 //dArgs.Add("COLORSCREEN", "false");
@@ -73,13 +73,13 @@ namespace PDFtools
                                 //Process.Start("gswin64c", GS4Net.GS4Net.g_gsArgs);
                                 if (radioBRemoveAtto.Checked == true)
                                 {
-                                    newfileName = path.Replace(path.Substring(extIndex, path.Length - extIndex), "_noAnnot.pdf");
+                                    newfileName = path.Replace(path.Substring(extIndex, path.Length - extIndex), "_noAnnotG.pdf");
                                     dArgs.Add("ShowAnnots", "false");
                                     GS4Net.GS4Net.Generate(path, newfileName, dArgs, sArgs);
                                 }
                                 else if (radioBunpassword.Checked == true)
                                 {
-                                    newfileName = path.Replace(path.Substring(extIndex, path.Length - extIndex), "_unpw.pdf");
+                                    newfileName = path.Replace(path.Substring(extIndex, path.Length - extIndex), "_unpwG.pdf");
                                     GS4Net.GS4Net.Generate(path, newfileName, dArgs, sArgs);
                                 }
                             }
